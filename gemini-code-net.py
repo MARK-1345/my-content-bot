@@ -28,7 +28,7 @@ if "GOOGLE_API_KEY" in st.secrets:
 
 # 1. ตั้งค่าโมเดล Gemini
 if "GOOGLE_API_KEY" in st.secrets:
-    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
+    genai.configure(api_key=st.secrets["AIzaSyAyQBPbM3wtvXOhVGhuDQmV5BhX8CAqoJ4"])
     model = genai.GenerativeModel('gemini-2.5-flash') # ใช้ตัวแรงตามโปรเจกต์เสี่ย
 
 # 2. ส่วน Sidebar สำหรับเลือกแบรนด์
