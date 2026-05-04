@@ -20,9 +20,9 @@ if user_password != PASSWORD_SECRET:
 # 🤖 2. ตั้งค่า Gemini API (แก้ถูก 100%)
 # -------------------------------
 try:
-    api_key = st.secrets["AIzaSyBbVIhEKf8rfhj4HzGUJZUifGq20zQFMhM"]  # ใช้ตอน deploy
+    api_key = st.secrets["GOOGLE_API_KEY"]  # ใช้ตอน deploy
 except:
-    api_key = "PUT_YOUR_API_KEY_HERE"  # ใช้ตอนรันในเครื่อง
+    api_key = "AIzaSyBbVIhEKf8rfhj4HzGUJZUifGq20zQFMhM"  # ใช้ตอนรันในเครื่อง
 
 if not api_key or api_key == "PUT_YOUR_API_KEY_HERE":
     st.error("❌ ยังไม่ได้ตั้งค่า API KEY")
