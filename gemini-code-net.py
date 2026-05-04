@@ -44,7 +44,7 @@ safety_settings = [
 
 # ใช้รุ่น 1.5-flash (ตัวแรงและเสถียรที่สุดตอนนี้ครับเสี่ย)
 model = genai.GenerativeModel(
-  model_name="gemini-2.5-flash", 
+  model_name="gemini-1.5-flash", 
   generation_config=generation_config,
   safety_settings=safety_settings
 )
