@@ -19,18 +19,32 @@ if user_password != PASSWORD_SECRET:
 # (ส่วนนี้คือโค้ดเดิมของเสี่ยที่เชื่อมกับ Gemini)
 st.title("🎬 เครื่องมือปั้นคอนเทนต์ 15 วิ (ฉบับพรรคพวก)")
 
-# ดึง API KEY จาก Streamlit Secrets (แนะนำให้ใช้ตอนเอาขึ้น GitHub)
-# หรือถ้าจะเทสในเครื่องเสี่ยก่อน ก็ใส่ genai.configure(api_key="API_KEY_ของเสี่ย")
-if "GOOGLE_API_KEY" in st.secrets:
-    genai.configure(api_key="AIzaSyAyQBPbM3wtvXOhVGhuDQmV5BhX8CAqoJ4")
+# --- ดึง API KEY และตั้งค่าโมเดล ---
+# แปะ API KEY ตัวใหม่ของเสี่ยตรงนี้เลยครับ
+API_KEY = "AIzaSyAyQBPbM3wtvXOhVGuDQmV5BhX8CAqoJ4" 
 
-# --- ส่วนที่ 3: โค้ดส่วนที่เหลือ (ระบบเลือกแบรนด์และปุ่มกด) ---
+genai.configure(api_key=API_KEY)
 
-# 1. ตั้งค่าโมเดล Gemini
-if "GOOGLE_API_KEY" in st.secrets:
-    genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-    model = genai.GenerativeModel('gemini-2.5-flash') # ใช้ตัวแรงตามโปรเจกต์เสี่ย
+# ตั้งค่าความปลอดภัยและโมเดล
+generation_config = {
+  "temperature": 1,
+  "top_p": 0.95,
+  "top_k": 40,
+  "max_output_tokens": 8192,
+}
 
+safety_settings = [
+    {"category": "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_SEXUALLY_EXPLICIT", "threshold": "BLOCK_NONE"},
+    {"category": "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_NONE"},
+]
+
+model = genai.GenerativeModel(
+  model_name="gemini-1.5-flash", 
+  generation_config=generation_config,
+  safety_settings=safety_settings
+)
 # 2. ส่วน Sidebar สำหรับเลือกแบรนด์
 st.sidebar.divider()
 brand = st.sidebar.selectbox(
