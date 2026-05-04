@@ -29,7 +29,7 @@ if "GOOGLE_API_KEY" in st.secrets:
 # 1. ตั้งค่าโมเดล Gemini
 if "GOOGLE_API_KEY" in st.secrets:
     genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-    model = genai.GenerativeModel('gemini-1.5-flash') # ใช้ตัวแรงตามโปรเจกต์เสี่ย
+    model = genai.GenerativeModel('gemini-2.5-flash') # ใช้ตัวแรงตามโปรเจกต์เสี่ย
 
 # 2. ส่วน Sidebar สำหรับเลือกแบรนด์
 st.sidebar.divider()
