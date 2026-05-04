@@ -22,7 +22,7 @@ st.success("ยินดีต้อนรับครับเสี่ย! ร
 # --- ดึง API KEY และตั้งค่าโมเดล ---
 # แนะนำเสี่ย: ถ้าไม่อยากโดนแบนกุญแจ ให้เอา Key ไปใส่ใน Streamlit Secrets ตามที่เคยบอกนะครับ
 try:
-    API_KEY = st.secrets["AIzaSyAs27sUI4XDy5CybfoizlcvLDnSnlunaWM"]
+    API_KEY = st.secrets["AIzaSyAo_esyFOQTNnzGs0cGAh7VuSwiiX6hODs"]
 except:
     API_KEY = "ใส่เลขคีย์จริงของเสี่ยตรงนี้ถ้ายังไม่ได้ตั้ง Secrets" 
 
