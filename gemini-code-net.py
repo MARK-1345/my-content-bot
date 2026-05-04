@@ -64,7 +64,6 @@ user_context = st.text_area(
 if st.button("🚀 ปั้นสคริปต์ให้หน่อยพรรคพวก!"):
     if user_context.strip():
         with st.spinner("พรรคพวกกำลังปั้นบทให้ใจเย็นๆ..."):
-            # แก้ไขบรรทัดนี้ให้มีเครื่องหมายคำพูดปิดท้ายให้ถูกต้อง
             prompt = f"ช่วยเขียนสคริปต์วิดีโอสั้น 15 วินาที สำหรับแบรนด์ {brand} โดยมีโจทย์คือ: {user_context} ขอเน้นคำพูดสไตล์พรรคพวก คนสู้ชีวิต และมีหักมุมตอนจบ"
             
             response = model.generate_content(prompt)
