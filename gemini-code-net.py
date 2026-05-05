@@ -39,7 +39,7 @@ if not nickname:
 try:
     api_key = st.secrets["GOOGLE_API_KEY"]  # ใช้ตอน deploy บน Streamlit Cloud
 except:
-    api_key = "AIzaSyAFeXUnm1jQ-u1AROxnekCYQuuwJxV7NN4"  # ใช้ตอนรันในเครื่อง
+    api_key = "AIzaSyDDIlGN4FOiFk7_BGbj_fnCiOQ7NRolSA4"  # ใช้ตอนรันในเครื่อง
 
 if not api_key or api_key == "PUT_YOUR_GEMINI_API_KEY_HERE":
     st.error("❌ ยังไม่ได้ตั้งค่า GEMINI API KEY")
